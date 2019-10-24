@@ -1,0 +1,11 @@
+{
+  "license": "UNLICENSED",
+  "scripts": {
+    "serve": "parcel src/*.html",
+    "build": "parcel build src/*.html"
+  },
+  "dependencies": {
+    "parcel-bundler": "^1.12.4",
+    "sass": "^1.23.1"
+  }
+}

@@ -1,0 +1,63 @@
+// This is simple SASS file. It allows you to OPTIONALLY use extra convenience provided by SASS
+// See more at https://sass-lang.com/guide
+
+html,
+body {
+  height: 100%;
+}
+body {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.5;
+
+  margin: 0;
+  padding: 0 2rem;
+
+  background-color: whitesmoke;
+}
+
+.book {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2rem;
+
+  justify-items: center;
+
+  padding: 2rem 0;
+
+  &__title {
+    font-size: 32px;
+  }
+
+  &__author {
+    color: darksalmon;
+
+    font-weight: 600;
+
+    margin: 0;
+  }
+
+  &__cover {
+    max-width: 100%;
+    height: auto;
+
+    grid-column: 2;
+    grid-row: span 2;
+
+    align-self: center;
+  }
+
+  &__description {
+    > :first-child {
+      background: linear-gradient(whitesmoke, darksalmon);
+    }
+
+    ul {
+      padding: 0 1rem;
+      li {
+        padding: 0.1rem 0;
+      }
+    }
+  }
+}
