@@ -1,63 +1,63 @@
-// This is simple SASS file. It allows you to OPTIONALLY use extra convenience provided by SASS
-// See more at https://sass-lang.com/guide
-
 html,
 body {
-  height: 100%;
+    height: 100%;
 }
 body {
-  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif;
-  line-height: 1.5;
-
-  margin: 0;
-  padding: 0 2rem;
-
-  background-color: whitesmoke;
-}
-
-.book {
-  display: grid;
-
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 2rem;
-
-  justify-items: center;
-
-  padding: 2rem 0;
-
-  &__title {
-    font-size: 32px;
-  }
-
-  &__author {
-    color: darksalmon;
-
-    font-weight: 600;
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.5;
 
     margin: 0;
-  }
+    padding: 0;
 
-  &__cover {
-    max-width: 100%;
-    height: auto;
+    background-color: whitesmoke;
+}
 
-    grid-column: 2;
-    grid-row: span 2;
+[data-movies] {
+    display: grid;
 
-    align-self: center;
-  }
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    grid-gap: 1rem;
 
-  &__description {
-    > :first-child {
-      background: linear-gradient(whitesmoke, darksalmon);
+    justify-items: center;
+
+    padding: 15px;
+}
+
+.movie {
+    display: grid;
+    grid-template-areas:
+        'poster'
+        'description'
+        'trailer';
+
+    @media (min-width: 540px) {
+        grid-template-areas:
+            'poster description'
+            'trailer trailer';
     }
 
-    ul {
-      padding: 0 1rem;
-      li {
-        padding: 0.1rem 0;
-      }
+    background-color: white;
+
+    box-shadow: 2px 2px 5px 0 rgba(50, 50, 50, 0.5);
+
+    &__image {
+        grid-area: poster;
+        min-width: 100%;
+        max-width: 100%;
+        height: auto;
     }
-  }
+
+    &__description {
+        grid-area: description;
+
+        padding: 5px;
+    }
+
+    &__trailer {
+        grid-area: trailer;
+
+        min-height: 400px;
+        margin-top: 10px;
+    }
 }
